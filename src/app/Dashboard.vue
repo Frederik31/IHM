@@ -83,7 +83,7 @@
 </template>
 
 <script>
-import VAChart from '../../components/VAChart.vue'
+import VAChart from '../components/VAChart.vue'
 
 export default {
   components: {

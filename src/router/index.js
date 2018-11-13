@@ -25,6 +25,7 @@ import AdvancedElements from 'pages/forms/AdvancedElements.vue'
 
 // import app component
 import Planning from 'app/Planning.vue'
+import Dashboard from 'app/Dashboard.vue'
 
 Vue.use(Router)
 
@@ -45,6 +46,11 @@ export default new Router({
       path: '/planning',
       name: 'Planning',
       component: Planning
+    },
+    {
+      path: '/dashboard',
+      name: 'Dashboard',
+      component: Dashboard
     },
     {
       path: '/dashboard/v1',
