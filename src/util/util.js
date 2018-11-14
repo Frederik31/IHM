@@ -90,3 +90,45 @@ export function getWidgetTasks (data) {
   }
   return {keys, lt}
 }
+
+export function getPaintType (jsondata) {
+  const paintTypes = jsondata.type.map((element) => {
+    return element.name
+  })
+  return paintTypes
+}
+
+export function getPaintSubType (jsondata, paintType) {
+  const paintTypeFiltered = jsondata.type.filter((element) => {
+    return element.name === paintType
+  })
+  console.log(paintTypeFiltered)
+  const paintSubTypes = paintTypeFiltered.map((element2) => {
+    return element2.stype.map((stype) => {
+      return stype.description
+    })
+  })
+  console.log(paintSubTypes.reduce((memo, it) => (memo.concat(it)), []))
+  return paintSubTypes.reduce((memo, it) => (memo.concat(it)), [])
+}
+
+export function getPaintDetail (jsondata, paintType, paintSubType) {
+  const paintTypeFiltered = jsondata.type.filter((element) => {
+    return element.name === paintType
+  })
+  console.log('paintTypeFiltered')
+  console.log(paintTypeFiltered)
+  const paintSubTypes = paintTypeFiltered.map((element2) => {
+    return element2.stype.filter((stype) => {
+      return stype.description === paintSubType
+    })
+  }).reduce((memo, it) => (memo.concat(it)), [])
+  console.log('paintSubTypes')
+  console.log(paintSubTypes)
+  const paintDetails = paintSubTypes.map((subtype) => {
+    return subtype.fields
+  }).reduce((memo, it) => (memo.concat(it)), [])
+  console.log('paintDetails')
+  console.log(paintDetails)
+  return paintDetails
+}

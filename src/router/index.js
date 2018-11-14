@@ -22,6 +22,7 @@ import Timeline from 'pages/ui-elements/Timeline.vue'
 // forms
 import GeneralElements from 'pages/forms/GeneralElements.vue'
 import AdvancedElements from 'pages/forms/AdvancedElements.vue'
+import UTCForm from 'pages/forms/UTCForm.vue'
 
 // import app component
 import Planning from 'app/Planning.vue'
@@ -142,6 +143,11 @@ export default new Router({
       path: '/forms/advanced-elements',
       name: 'AdvancedElements',
       component: AdvancedElements
+    },
+    {
+      path: 'utcform-elements',
+      name: 'UTCForm',
+      component: UTCForm
     }
   ],
   linkActiveClass: 'active'
