@@ -17,7 +17,7 @@ module.exports = [
     icon: 'fa fa-pie-chart',
     name: 'Dashboard',
     router: {
-      name: 'Modals'
+      name: 'Dashboard'
     }
   },
   {

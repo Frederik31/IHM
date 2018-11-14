@@ -10,7 +10,7 @@
             <va-chart
               :chart-config='chartConfig'></va-chart>
           </div>
-          <!-- <div class='col-md-4'>
+          <div class='col-md-4'>
             <p class='text-center'>
               <strong>Test Line Chart</strong>
             </p>
@@ -18,8 +18,8 @@
               :chart-config='lineChartConfig'
             >
             </va-chart>
-          </div> -->
-          <!-- <div class='col-md-4'>
+          </div>
+          <div class='col-md-4'>
             <p class='text-center'>
               <strong>Test Bar Chart</strong>
             </p>
@@ -27,7 +27,7 @@
               :chart-config='barChartConfig'
             >
             </va-chart>
-          </div> -->
+          </div>
         </div>
       </div>
     </div>

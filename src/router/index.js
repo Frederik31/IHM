@@ -17,7 +17,7 @@ import Icons from 'pages/ui-elements/Icons.vue'
 import Buttons from 'pages/ui-elements/Buttons.vue'
 import Sliders from 'pages/ui-elements/Sliders.vue'
 import Timeline from 'pages/ui-elements/Timeline.vue'
-import Modals from 'pages/ui-elements/Modals.vue'
+// import Modals from 'pages/ui-elements/Modals.vue'
 
 // forms
 import GeneralElements from 'pages/forms/GeneralElements.vue'
@@ -117,11 +117,11 @@ export default new Router({
       name: 'Timeline',
       component: Timeline
     },
-    {
-      path: '/ui-elements/modals',
-      name: 'Modals',
-      component: Modals
-    },
+    // {
+    //   path: '/ui-elements/modals',
+    //   name: 'Modals',
+    //   component: Modals
+    // },
     {
       path: '/forms/general-elements',
       name: 'GeneralElements',
