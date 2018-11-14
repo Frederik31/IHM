@@ -49,7 +49,7 @@
         <p class="message">
           <a href="#" class="name">
             <small class="text-muted pull-right"><i class="fa fa-clock-o"></i> 5:15</small>
-            Alexander Pierce
+            Wilfried Beaumes
           </a>
           I would like to meet you to discuss the latest news about
           the arrival of the new theme. They say it is going to be one the
