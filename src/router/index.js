@@ -26,6 +26,7 @@ import AdvancedElements from 'pages/forms/AdvancedElements.vue'
 // import app component
 import Planning from 'app/Planning.vue'
 import MSNPlanning from 'app/MSNPlanning.vue'
+import Table from 'pages/ui-elements/Table.vue'
 
 Vue.use(Router)
 
@@ -56,6 +57,11 @@ export default new Router({
       path: '/planning/msn',
       name: 'MSNPlanning',
       component: MSNPlanning
+    },
+    {
+      path: '/ui-elements/Table',
+      name: 'PlanningTable',
+      component: Table
     },
     {
       path: '/dashboard/v1',

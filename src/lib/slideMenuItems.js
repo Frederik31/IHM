@@ -41,6 +41,14 @@ module.exports = [
     name: 'ADMINISTRATION'
   },
   {
+    type: 'item',
+    icon: 'fa fa-table',
+    name: 'Planning table',
+    router: {
+      name: 'PlanningTable'
+    }
+  },
+  {
     type: 'tree',
     icon: 'fa fa-table',
     name: 'Dashboard',
