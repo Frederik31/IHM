@@ -272,7 +272,7 @@
                   <!-- Message. Default to the left -->
                   <div class="direct-chat-msg">
                     <div class="direct-chat-info clearfix">
-                      <span class="direct-chat-name pull-left">Alexander Pierce</span>
+                      <span class="direct-chat-name pull-left">Wilfried Beaumes</span>
                       <span class="direct-chat-timestamp pull-right">23 Jan 2:00 pm</span>
                     </div>
                     <!-- /.direct-chat-info -->
@@ -302,7 +302,7 @@
                   <!-- Message. Default to the left -->
                   <div class="direct-chat-msg">
                     <div class="direct-chat-info clearfix">
-                      <span class="direct-chat-name pull-left">Alexander Pierce</span>
+                      <span class="direct-chat-name pull-left">Wilfried Beaumes</span>
                       <span class="direct-chat-timestamp pull-right">23 Jan 5:37 pm</span>
                     </div>
                     <!-- /.direct-chat-info -->
@@ -466,7 +466,7 @@
                 <ul class="users-list clearfix">
                   <li>
                     <img src="~admin-lte/dist/img/user1-128x128.jpg" alt="User Image">
-                    <a class="users-list-name" href="#">Alexander Pierce</a>
+                    <a class="users-list-name" href="#">Wilfried Beaumes</a>
                     <span class="users-list-date">Today</span>
                   </li>
                   <li>

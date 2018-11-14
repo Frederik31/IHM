@@ -26,6 +26,7 @@ import UTCForm from 'pages/forms/UTCForm.vue'
 
 // import app component
 import Planning from 'app/Planning.vue'
+import MSNPlanning from 'app/MSNPlanning.vue'
 
 Vue.use(Router)
 
@@ -46,6 +47,16 @@ export default new Router({
       path: '/planning',
       name: 'Planning',
       component: Planning
+    },
+    {
+      path: '/planning/tasks',
+      name: 'TaskPlanning',
+      component: Planning
+    },
+    {
+      path: '/planning/msn',
+      name: 'MSNPlanning',
+      component: MSNPlanning
     },
     {
       path: '/dashboard/v1',

@@ -16,7 +16,7 @@
       <ul class="users-list clearfix">
         <li>
           <img src="~admin-lte/dist/img/user1-128x128.jpg" alt="User Image">
-          <a class="users-list-name" href="#">Alexander Pierce</a>
+          <a class="users-list-name" href="#">Wilfried Beaumes</a>
           <span class="users-list-date">Today</span>
         </li>
         <li>
