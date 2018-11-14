@@ -31,6 +31,22 @@ module.exports = {
       '/gantt': {
         target: 'http://localhost:3001',
         changeOrigin: true
+      },
+      '/dash': {
+        target: 'http://localhost:3001',
+        changeOrigin: true
+      },
+      '/alerts': {
+        target: 'http://localhost:3001',
+        changeOrigin: true
+      },
+      '/pseudo': {
+        target: 'http://localhost:3001',
+        changeOrigin: true
+        },
+      '/paints': {
+        target: 'http://localhost:3001',
+        changeOrigin: true
       }
     },
     // CSS Sourcemaps off by default because relative paths are "buggy"
