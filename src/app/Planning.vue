@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="container-fluid">
-    <h1>Planning</h1>
+    <h1>Task Planning</h1>
     <div class="col-md-12" v-if="!loading">
         <gantt class="gantt_wrapper panel" :tasks="tasks" @task-updated="logTaskUpdate" @link-updated="logLinkUpdate" @task-selected="selectTask"></gantt>
    </div>
@@ -26,7 +26,6 @@ export default {
   created () {
     services.ganttapi.getGantt()
     .then((response) => {
-      console.log(response.data)
       const jsondata = response.data
 
       const manutTasks = util.getGanttTasks({data: jsondata, type: 'manut', fieldDateStart: 'Manut', duration: 1})

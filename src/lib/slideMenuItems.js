@@ -5,12 +5,27 @@ module.exports = [
     name: 'MAIN NAVIGATION'
   },
   {
-    type: 'item',
+    type: 'tree',
     icon: 'fa fa-dashboard',
     name: 'Planning',
-    router: {
-      name: 'Planning'
-    }
+    items: [
+      {
+        type: 'item',
+        icon: 'fa fa-circle-o',
+        name: 'Par tache',
+        router: {
+          name: 'TaskPlanning'
+        }
+      },
+      {
+        type: 'item',
+        icon: 'fa fa-circle-o',
+        name: 'Par MSN',
+        router: {
+          name: 'MSNPlanning'
+        }
+      }
+    ]
   },
   {
     type: 'item',
@@ -19,6 +34,11 @@ module.exports = [
     router: {
       name: 'Dashboard'
     }
+  },
+  {
+    type: 'item',
+    isHeader: true,
+    name: 'ADMINISTRATION'
   },
   {
     type: 'tree',

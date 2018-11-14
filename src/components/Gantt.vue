@@ -1,5 +1,5 @@
 <template>
-  <div ref="gantt"></div>
+    <div ref="gantt"></div>
 </template>
 
 <script>
@@ -18,51 +18,83 @@ export default {
 
   methods: {
     $_initGanttEvents: function () {
+      this.events = []
       if (gantt.$_eventsInitialized) {
         return
       }
-      gantt.attachEvent('onTaskSelected', (id) => {
+      var event = gantt.attachEvent('onTaskSelected', (id) => {
         let task = gantt.getTask(id)
         this.$emit('task-selected', task)
       })
+      this.events.push(event)
 
-      gantt.attachEvent('onAfterTaskAdd', (id, task) => {
-        this.$emit('task-updated', id, 'inserted', task)
-        task.progress = task.progress || 0
-        if (gantt.getSelectedId() === id) {
-          this.$emit('task-selected', task)
+      event = gantt.attachEvent('onTaskDrag', (id, mode, task, original) => {
+        console.log(`onTaskDrag ${mode}`)
+        var modes = gantt.config.drag_mode
+        if (mode === modes.move) {
+          var diff = task.start_date - original.start_date
+          console.log(diff)
         }
       })
+      this.events.push(event)
 
-      gantt.attachEvent('onAfterTaskUpdate', (id, task) => {
+      event = gantt.attachEvent('onAfterTaskUpdate', (id, task) => {
+        task.color = 'orange'
+        gantt.refreshTask(task.id)
         this.$emit('task-updated', id, 'updated', task)
       })
+      this.events.push(event)
 
-      gantt.attachEvent('onAfterTaskDelete', (id) => {
-        this.$emit('task-updated', id, 'deleted')
-        if (!gantt.getSelectedId()) {
-          this.$emit('task-selected', null)
-        }
-      })
-
-      gantt.attachEvent('onAfterLinkAdd', (id, link) => {
-        this.$emit('link-updated', id, 'inserted', link)
-      })
-
-      gantt.attachEvent('onAfterLinkUpdate', (id, link) => {
-        this.$emit('link-updated', id, 'updated', link)
-      })
-
-      gantt.attachEvent('onAfterLinkDelete', (id, link) => {
-        this.$emit('link-updated', id, 'deleted')
-      })
       gantt.$_eventsInitialized = true
     }
   },
 
+  destroyed () {
+    for (var i = 0; i < this.events.length; i++) {
+      gantt.detachEvent(this.events[i])
+    }
+    this.events = []
+    gantt.clearAll()
+    gantt.$_eventsInitialized = false
+  },
+
   mounted () {
     this.$_initGanttEvents()
+    this.taskId = null
 
+    // FPL : Customizing the lightbox
+    gantt.showLightbox = (id) => {
+      this.taskId = id
+      var task = gantt.getTask(id)
+
+      var form = document.getElementById('my-form')
+      var input = form.querySelector("[name='description']")
+      input.focus()
+      input.value = task.text
+
+      input = form.querySelector("[name='o_start_date']")
+      input.value = task.o_start_date
+      input = form.querySelector("[name='o_end_date']")
+      input.value = task.o_end_date
+      input = form.querySelector("[name='n_start_date']")
+      input.value = task.start_date
+      input = form.querySelector("[name='n_end_date']")
+      input.value = task.end_date
+
+      form.style.display = 'block'
+
+      form.querySelector("[name='close']").onclick = () => {
+        gantt.hideLightbox()
+      }
+    }
+
+    gantt.hideLightbox = () => {
+      document.getElementById('my-form').style.display = ''
+      this.taskId = null
+    }
+
+    gantt.config.drag_progress = false
+    gantt.config.drag_resize = false
     gantt.config.min_column_width = 30
     gantt.config.scale_height = 60
     gantt.config.date_scale = '%d'
