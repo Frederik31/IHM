@@ -169,8 +169,10 @@ module.exports = [
       {
         type: 'item',
         icon: 'fa fa-circle-o',
-        name: 'Editors',
-        link: 'pages/forms/editors.html'
+        name: 'UTC Form',
+        router: {
+          name: 'UTCForm'
+        }
       }
     ]
   }
