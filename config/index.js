@@ -30,25 +30,18 @@ module.exports = {
     proxyTable: {
       '/gantt': {
         target: 'http://localhost:3001',
-        changeOrigin: true /*,
-        pathRewrite: {
-          '^/api': ''
-        } */
+        changeOrigin: true
       },
       '/alerts': {
         target: 'http://localhost:3001',
-        changeOrigin: true /*,
-        pathRewrite: {
-          '^/api': ''
-        } */
+        changeOrigin: true
       },
       '/pseudo': {
         target: 'http://localhost:3001',
-        changeOrigin: true /*,
-        pathRewrite: {
-          '^/api': ''
-        } */
+        changeOrigin: true
         }
+        changeOrigin: true
+      }
     },
     // CSS Sourcemaps off by default because relative paths are "buggy"
     // with this option, according to the CSS-Loader README
