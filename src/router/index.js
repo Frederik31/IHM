@@ -73,7 +73,7 @@ export default new Router({
       component: Planning
     },
     {
-      path: '/planning/msn',
+      path: '/planning/:type',
       name: 'MSNPlanning',
       component: MSNPlanning
     },

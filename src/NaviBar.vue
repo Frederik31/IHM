@@ -39,30 +39,22 @@
             </ul>
           </li>
           <!-- User Account: style can be found in dropdown.less -->
-          <li class="dropdown user user-menu">
+          <li class="dropdown user user-menu" v-if="!loading">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <span class="hidden-xs">{{ currentUser.name }}</span>
+              <span class="hidden-xs">{{ currentUser.fullname }}</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-
-                  {{ currentUser.name }} - {{ currentUser.position }}
+                <p>
+                  {{ currentUser.fullname }} - {{ currentUser.role }}
                   <small>{{ currentUser.createdAt }}</small>
                 </p>
               </li>
-              <!-- Menu Body -->
-              <li class="user-body">
-                <row>
-                </row>
-                <!-- /.row -->
-              </li>
               <!-- Menu Footer-->
               <li class="user-footer">
-                <div class="pull-left">
-                </div>
                 <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="/logout" class="btn btn-default btn-flat">Sign out</a>
                 </div>
               </li>
             </ul>
@@ -82,15 +74,15 @@ export default {
   data () {
     return {
       notificationsCount: null,
-      donnee: null
+      donnee: null,
+      currentUser: null
     }
   },
   computed: {
     ...mapGetters([
       'unreadMessagesCount',
       'unreadNotificationsCount',
-      'remainTasksCount',
-      'currentUser'
+      'remainTasksCount'
     ])
   },
   created () {
@@ -110,7 +102,7 @@ export default {
     services.pseudoapi.getPseudo()
     .then((response) => {
       console.log(response.data)
-      // const jsondata = response.data
+      this.currentUser = response.data
     })
     .catch((error) => {
       console.error(error)
