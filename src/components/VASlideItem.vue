@@ -22,7 +22,7 @@
           <i :class="item.icon"></i> {{ item.name }}
         </a>
       </router-link>
-      <router-link tag="li" v-for="(item,index) in items" :data="item" :key="index" :to="item.link" v-if="item.link && item.router && item.router.name">
+      <router-link tag="li" v-for="(item,index) in items" :data="item" :key="index" :to="item.link" v-else-if="item.link && item.router && item.router.name">
         <a>
           <i :class="item.icon"></i> {{ item.name }}
         </a>
