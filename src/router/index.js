@@ -56,6 +56,11 @@ export default new Router({
       component: Dashboard
     },
     {
+      path: '/prediction',
+      name: 'WidgetsExample',
+      component: WidgetsExample
+    },
+    {
       path: '/planning/tasks',
       name: 'TaskPlanning',
       component: Planning
