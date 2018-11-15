@@ -38,7 +38,7 @@ export default {
   },
   beforeRouteUpdate (to, from, next) {
     this.loading = true
-    this.loadData(to.params.type)
+    this.loadData('msn')
     .then((tasks) => {
       this.tasks = {
         data: tasks
@@ -54,7 +54,7 @@ export default {
   },
   created () {
     this.loading = true
-    this.loadData(this.$route.params.type)
+    this.loadData('msn')
     .then((tasks) => {
       this.tasks = {
         data: tasks
