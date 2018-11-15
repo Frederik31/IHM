@@ -5,15 +5,15 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="~admin-lte/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+          <!-- <img src= class="img-circle" alt="User Image"> -->
         </div>
         <div class="pull-left info">
-          <p>{{ currentUser.name }}</p>
-          <a href="#"><i class="fa fa-circle" :style="`color:${currentUser.state.color}`"></i> {{ currentUser.state.name }}</a>
+          <!-- <p>{{ currentUser.name }}</p> -->
+          <!-- <a href="#"><i class="fa fa-circle" :style="`color:${currentUser.state.color}`"></i> {{ currentUser.state.name }}</a> -->
         </div>
       </div>
       <!-- search form -->
-      <form action="#" method="get" class="sidebar-form">
+      <!-- <form action="#" method="get" class="sidebar-form">
         <div class="input-group">
           <input type="text" name="q" class="form-control" placeholder="Search...">
               <span class="input-group-btn">
@@ -21,7 +21,7 @@
                 </button>
               </span>
         </div>
-      </form>
+      </form> -->
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul data-widget="tree" class="sidebar-menu">
