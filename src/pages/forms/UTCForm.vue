@@ -1,4 +1,5 @@
 <template>
+  <div>
    <row>
     <column class="col-md-6">
         <va-box
@@ -30,7 +31,7 @@
             </div>
         </va-box>
 
-          
+
     </column>
     <column class="col-md-6">
         <va-box
@@ -49,12 +50,24 @@
                     :placeholder=action[index]
                     :value= temps[index]>
                     </input>
-                </div> 
-                </div> 
+                </div>
+                </div>
+            </div>
+            <div slot="footer">
+              <button type="button" v-on:click="update" class="btn" :class="[false, 'info', false, false, 10]">
+                Update
+              <slot></slot>
+              </button>
             </div>
         </va-box>
     </column>
    </row>
+
+   <div>
+     <button class="btn btn-primary"><i class="glyphicon glyphicon-plus-sign"></i> Add an item</button>
+  </div>
+
+</div>
 </template>
 
 <script>
@@ -107,6 +120,27 @@ export default {
     },
     computePaintDetails (event) {
       this.selectedPaintSubType = event.target.value
+    },
+    update (event) {
+      if (this.selectedPaintSubType !== '') {
+        console.log(this.action)
+        var fields = []
+        for (var i = 0; i < this.action.length; i++) {
+          var elem = this.action[i]
+          var field = document.getElementById(elem)
+          var obj = {}
+          obj[elem] = field.value
+          fields.push(obj)
+        }
+        console.log(fields)
+        services.paintsapi.updatePaints(this.selectedPaintType, this.selectedPaintSubType, fields)
+        .then((response) => {
+          console.log('paints updated')
+        })
+        .catch((error) => {
+          console.error(error)
+        })
+      }
     }
   },
   created () {
