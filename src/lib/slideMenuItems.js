@@ -49,6 +49,14 @@ module.exports = [
     }
   },
   {
+    type: 'item',
+    icon: 'fa fa-edit',
+    name: 'UTC Form',
+    router: {
+      name: 'UTCForm'
+    }
+  },
+  {
     type: 'tree',
     icon: 'fa fa-table',
     name: 'Dashboard',
