@@ -68,7 +68,7 @@
 <script>
 import { mapGetters } from 'vuex'
 import { services } from './vuex/api'
-import global from './util/globalApps'
+import global from './util/globalApp'
 
 export default {
   name: 'va-navibar',

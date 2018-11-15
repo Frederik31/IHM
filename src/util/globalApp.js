@@ -1,1 +1,2 @@
-export default conf = {}
+var conf = {}
+export default conf

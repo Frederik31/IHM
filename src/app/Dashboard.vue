@@ -77,7 +77,7 @@
 import VAChart from '../components/VAChart.vue'
 import { services } from '../vuex/api'
 // import * as util from '../util/util.js'
-import global from '../util/globalApps'
+import global from '../util/globalApp'
 
 export default {
   components: {
@@ -85,7 +85,7 @@ export default {
   },
   data () {
     return {
-      selected: 'A',
+      selected: 'C',
       loading: true,
       chartConfig: {
         type: 'pie',
@@ -301,10 +301,10 @@ export default {
         this.selected = 'A'
         break
       case 'operator':
-        this.selected = 'A'
+        this.selected = 'B'
         break
       case 'user':
-        this.selected = 'A'
+        this.selected = 'C'
         break
     }
     services.dashapi.getDash()
