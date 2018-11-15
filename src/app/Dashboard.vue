@@ -1,6 +1,6 @@
 <template>
   <section class='content'>
-    <div class='box'>
+    <div class='box' v-if="!loading">
       <div class='box-body'>
           <div class='col-md-6'>
             <p class='text-center'>
@@ -34,6 +34,7 @@ export default {
   },
   data () {
     return {
+      loading: true,
       chartConfig: {
         type: 'pie',
         data: {
