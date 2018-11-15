@@ -1,4 +1,5 @@
 <template>
+  <div>
    <row>
     <column class="col-md-6">
         <va-box
@@ -30,7 +31,7 @@
             </div>
         </va-box>
 
-          
+
     </column>
     <column class="col-md-6">
         <va-box
@@ -49,12 +50,18 @@
                     :placeholder=action[index]
                     :value= temps[index]>
                     </input>
-                </div> 
-                </div> 
+                </div>
+                </div>
             </div>
         </va-box>
     </column>
    </row>
+
+   <div>
+     <button class="btn btn-primary"><i class="glyphicon glyphicon-plus-sign"></i> Add an item</button>
+  </div>
+
+</div>
 </template>
 
 <script>
