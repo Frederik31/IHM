@@ -63,10 +63,32 @@
     </column>
    </row>
 
-   <div>
-     <button class="btn btn-primary"><i class="glyphicon glyphicon-plus-sign"></i> Add an item</button>
-  </div>
+  <div>
+    <va-box
+    title="Working rules"
+    theme="box-primary"
+    :isBorder="true"
+    widgetType="">
 
+    <div slot="content">
+        <label>Cabine jour</label> <input v-model="message" placeholder="2"></br>
+        <label>Cabine jour</label>  <input v-model="message" placeholder="2"></br>
+        <label>Cabine semaine</label>  <input v-model="message" placeholder="6"></br>
+        <label>Temps ponçage</label>  <input v-model="message" placeholder="1"></br>
+        <label>Temps manutention</label>  <input v-model="message" placeholder="1"></br>
+        <label>Temps moteur</label>  <input v-model="message" placeholder="4"></br>
+        <label>Temps doc</label>  <input v-model="message" placeholder="1"></br>
+        <label>Temps IC</label>  <input v-model="message" placeholder="9"></br>
+        <label>Temps ENG</label>  <input v-model="message" placeholder="6"></br>
+        <label>Temps Fin prod</label>  <input v-model="message" placeholder="1">
+    </div>
+
+    </va-box>
+
+  </div>
+  <div>
+    <button class="btn btn-primary"><i class="glyphicon glyphicon-plus-sign"></i> Add an item</button>
+ </div>
 </div>
 </template>
 
@@ -172,4 +194,11 @@ export default {
 </script>
 
 <style>
+
+label{
+  display: inline-block;
+  margin-right: 28px;
+  width: 150px;
+  padding: 6px 9px 0;
+}
 </style>

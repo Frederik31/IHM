@@ -28,12 +28,35 @@ module.exports = [
     ]
   },
   {
-    type: 'item',
+    type: 'tree',
     icon: 'fa fa-pie-chart',
     name: 'Dashboard',
-    router: {
-      name: 'Dashboard'
-    }
+    items: [
+      {
+        type: 'item',
+        icon: 'fa fa-circle-o',
+        name: 'Dashboard',
+        router: {
+          name: 'Dashboard'
+        }
+      },
+      {
+        type: 'item',
+        icon: 'fa fa-circle-o',
+        name: 'Prediction Day',
+        router: {
+          name: 'Prediction'
+        }
+      },
+      {
+        type: 'item',
+        icon: 'fa fa-circle-o',
+        name: 'Prediction Week',
+        router: {
+          name: 'Prediction2'
+        }
+      }
+    ]
   },
   {
     type: 'item',
