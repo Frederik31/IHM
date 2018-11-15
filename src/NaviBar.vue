@@ -68,6 +68,7 @@
 <script>
 import { mapGetters } from 'vuex'
 import { services } from './vuex/api'
+import global from './util/globalApps'
 
 export default {
   name: 'va-navibar',
@@ -103,6 +104,7 @@ export default {
     .then((response) => {
       console.log(response.data)
       this.currentUser = response.data
+      global.role = this.currentUser.role
     })
     .catch((error) => {
       console.error(error)

@@ -77,6 +77,7 @@
 import VAChart from '../components/VAChart.vue'
 import { services } from '../vuex/api'
 // import * as util from '../util/util.js'
+import global from '../util/globalApps'
 
 export default {
   components: {
@@ -294,6 +295,18 @@ export default {
     }
   },
   created () {
+    var role = global.role
+    switch (role) {
+      case 'admin':
+        this.selected = 'A'
+        break
+      case 'operator':
+        this.selected = 'A'
+        break
+      case 'user':
+        this.selected = 'A'
+        break
+    }
     services.dashapi.getDash()
     .then((response) => {
       console.log(response.data)
