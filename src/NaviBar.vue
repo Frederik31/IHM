@@ -68,7 +68,7 @@
 <script>
 import { mapGetters } from 'vuex'
 import { services } from './vuex/api'
-import global from './util/globalApp'
+// import global from './util/globalApp'
 
 export default {
   name: 'va-navibar',
@@ -76,7 +76,16 @@ export default {
     return {
       notificationsCount: null,
       donnee: null,
-      currentUser: null
+      // currentUser: null,
+      loading: true
+    }
+  },
+  props: {
+    currentUser: {
+      type: Object,
+      default () {
+        return {}
+      }
     }
   },
   computed: {
@@ -87,6 +96,9 @@ export default {
     ])
   },
   created () {
+    this.loading = true
+    // this.currentUser = global.currentUser
+
     services.alertapi.getAlerts()
     .then((response) => {
       console.log(response.data)
@@ -99,7 +111,7 @@ export default {
     })
     .finally(() => {
       this.loading = false
-    })
+    }) /*
     services.pseudoapi.getPseudo()
     .then((response) => {
       console.log(response.data)
@@ -111,7 +123,7 @@ export default {
     })
     .finally(() => {
       this.loading = false
-    })
+    }) */
   }
 
 }

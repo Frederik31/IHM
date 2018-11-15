@@ -57,26 +57,5 @@ module.exports = [
         }
       }
     ]
-  },
-  {
-    type: 'item',
-    isHeader: true,
-    name: 'ADMINISTRATION'
-  },
-  {
-    type: 'item',
-    icon: 'fa fa-table',
-    name: 'Planning table',
-    router: {
-      name: 'PlanningTable'
-    }
-  },
-  {
-    type: 'item',
-    icon: 'fa fa-edit',
-    name: 'UTC Form',
-    router: {
-      name: 'UTCForm'
-    }
   }
 ]

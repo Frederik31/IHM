@@ -295,7 +295,7 @@ export default {
     }
   },
   created () {
-    var role = global.role
+    var role = global.currentUser.role
     switch (role) {
       case 'admin':
         this.selected = 'A'
