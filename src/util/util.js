@@ -82,6 +82,15 @@ export function getGanttPaintTasks (jsondata) {
   return tasks
 }
 
+export function getWidgetTasks (data) {
+  const keys = Object.keys(data)
+  const lt = []
+  for (var nb in data) {
+    lt.push(data[nb].length)
+  }
+  return {keys, lt}
+}
+
 export function getPaintType (jsondata) {
   const paintTypes = jsondata.type.map((element) => {
     return element.name

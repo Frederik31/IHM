@@ -17,7 +17,7 @@ import Icons from 'pages/ui-elements/Icons.vue'
 import Buttons from 'pages/ui-elements/Buttons.vue'
 import Sliders from 'pages/ui-elements/Sliders.vue'
 import Timeline from 'pages/ui-elements/Timeline.vue'
-import Modals from 'pages/ui-elements/Modals.vue'
+// import Modals from 'pages/ui-elements/Modals.vue'
 
 // forms
 import GeneralElements from 'pages/forms/GeneralElements.vue'
@@ -26,6 +26,7 @@ import UTCForm from 'pages/forms/UTCForm.vue'
 
 // import app component
 import Planning from 'app/Planning.vue'
+import Dashboard from 'app/Dashboard.vue'
 import MSNPlanning from 'app/MSNPlanning.vue'
 
 Vue.use(Router)
@@ -47,6 +48,11 @@ export default new Router({
       path: '/planning',
       name: 'Planning',
       component: Planning
+    },
+    {
+      path: '/dashboard',
+      name: 'Dashboard',
+      component: Dashboard
     },
     {
       path: '/planning/tasks',
@@ -123,11 +129,11 @@ export default new Router({
       name: 'Timeline',
       component: Timeline
     },
-    {
-      path: '/ui-elements/modals',
-      name: 'Modals',
-      component: Modals
-    },
+    // {
+    //   path: '/ui-elements/modals',
+    //   name: 'Modals',
+    //   component: Modals
+    // },
     {
       path: '/forms/general-elements',
       name: 'GeneralElements',

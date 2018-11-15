@@ -32,6 +32,10 @@ module.exports = {
         target: 'http://localhost:3001',
         changeOrigin: true
       },
+      '/dash': {
+        target: 'http://localhost:3001',
+        changeOrigin: true
+      },
       '/alerts': {
         target: 'http://localhost:3001',
         changeOrigin: true
@@ -42,11 +46,8 @@ module.exports = {
         },
       '/paints': {
         target: 'http://localhost:3001',
-        changeOrigin: true /*,
-        pathRewrite: {
-          '^/api': ''
-        } */
-        }
+        changeOrigin: true
+      }
     },
     // CSS Sourcemaps off by default because relative paths are "buggy"
     // with this option, according to the CSS-Loader README
