@@ -28,6 +28,8 @@ import UTCForm from 'pages/forms/UTCForm.vue'
 import Planning from 'app/Planning.vue'
 import Dashboard from 'app/Dashboard.vue'
 import MSNPlanning from 'app/MSNPlanning.vue'
+import Prediction from 'app/Prediction.vue'
+import Prediction2 from 'app/Prediction2.vue'
 import Table from 'pages/ui-elements/Table.vue'
 
 Vue.use(Router)
@@ -37,8 +39,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Dashboard',
-      component: Dashboard
+      name: 'Prediction',
+      component: Prediction
     },
     {
       path: '/sample',
@@ -54,6 +56,21 @@ export default new Router({
       path: '/dashboard',
       name: 'Dashboard',
       component: Dashboard
+    },
+    {
+      path: '/prediction',
+      name: 'Prediction',
+      component: Prediction
+    },
+    {
+      path: '/prediction2',
+      name: 'Prediction2',
+      component: Prediction2
+    },
+    {
+      path: '/planning/tasks',
+      name: 'TaskPlanning',
+      component: Planning
     },
     {
       path: '/planning/:type',

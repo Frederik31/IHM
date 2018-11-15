@@ -4,8 +4,9 @@
       <i v-bind:class="bgIcon"></i>
     </span>
     <div class="info-box-content">
-      <span class="info-box-text">{{text}}</span>
-      <span class="info-box-number">{{parseNumber}}</span>
+      <span class="info-box-text"><b>{{text}}</b></span>
+      <!-- <span class="info-box-number" >{{parseNumber}}</span> -->
+      <span class="info-box-date"><b>{{date}}</b></span>
 
       <div class="progress" v-if="isProgress">
         <div class="progress-bar" :style="`width: ${percentage}%`"></div>
@@ -38,6 +39,10 @@
       'number': {
         type: String,
         default: 0
+      },
+      'date': {
+        type: String,
+        default: ''
       },
       'numberType': {
         type: String
