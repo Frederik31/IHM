@@ -4,6 +4,10 @@ export function formatDate (dateIn) {
     dateIn.substring(0, 4)
 }
 
+export function getRandomInt (min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min
+}
+
 export function getGanttTasks (config) {
   const tasks = config.data.map((element) => {
     var task = {
@@ -45,6 +49,21 @@ export function getMSNTasks (jsondata) {
       'id': element.MSN,
       'text': element.MSN,
       'msn': element.MSN
+    }
+    var status = getRandomInt(0, 2)
+    switch (status) {
+      case 0:
+        task.color = 'green'
+        task.status = 'FINISHED'
+        break
+      case 1:
+        task.color = 'blue'
+        task.status = 'PENDING'
+        break
+      case 2:
+        task.color = 'yellow'
+        task.status = 'STARTED'
+        break
     }
     task['start_date'] = formatDate(element['Manut'])
     task['end_date'] = formatDate(element['Fin Prod'])
