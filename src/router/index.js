@@ -56,12 +56,7 @@ export default new Router({
       component: Dashboard
     },
     {
-      path: '/planning/tasks',
-      name: 'TaskPlanning',
-      component: Planning
-    },
-    {
-      path: '/planning/msn',
+      path: '/planning/:type',
       name: 'MSNPlanning',
       component: MSNPlanning
     },

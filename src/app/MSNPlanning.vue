@@ -1,6 +1,10 @@
 <template lang="html">
   <div class="container-fluid">
-    <h1>MSN Planning</h1>
+    <h1>{{ mode.toUpperCase() }} Planning</h1>
+    <div class="col-md-6" v-if="!loading">
+      <button type="button" class="btn btn-default">Export to PDF</button>
+      <button type="button" class="btn btn-default">Validate</button>
+    </div>
     <div class="col-md-12" v-if="!loading">
         <gantt class="gantt_wrapper panel" :tasks="tasks" @task-updated="logTaskUpdate" @link-updated="logLinkUpdate" @task-selected="selectTask"></gantt>
         <div id="my-form">
@@ -25,37 +29,33 @@ export default {
   components: {Gantt},
   data () {
     return {
+      mode: 'msn',
       loading: true,
       tasks: {},
       selectedTask: null,
       messages: []
     }
   },
-  created () {
-    services.ganttapi.getGantt()
-    .then((response) => {
-      const jsondata = response.data
-
-      var mode = 'msn'
-
-      let tasks = null
-      if (mode === 'msn') {
-        tasks = util.getMSNTasks(jsondata)
-      } else {
-        const manutTasks = util.getGanttTasks({data: jsondata, type: 'manut', fieldDateStart: 'Manut', duration: 1})
-        const poncageTasks = util.getGanttTasks({data: jsondata, type: 'poncage', fieldDateStart: 'Poncage', duration: 1})
-        const cabineTasks = util.getGanttTasks({data: jsondata, type: 'cabine', fieldDateStart: 'Start Cabine', fieldDateEnd: 'Fin Cabine'})
-        const paintTasks = util.getGanttPaintTasks(jsondata)
-        const moteurTasks = util.getGanttTasks({data: jsondata, type: 'moteur', fieldDateStart: 'Start Moteur', fieldDateEnd: 'Fin Moteur'})
-        const docTasks = util.getGanttTasks({data: jsondata, type: 'doc', fieldDateStart: 'Doc', duration: 1})
-
-        tasks = manutTasks
-          .concat(poncageTasks)
-          .concat(cabineTasks)
-          .concat(paintTasks)
-          .concat(moteurTasks)
-          .concat(docTasks)
+  beforeRouteUpdate (to, from, next) {
+    this.loading = true
+    this.loadData(to.params.type)
+    .then((tasks) => {
+      this.tasks = {
+        data: tasks
       }
+    })
+    .catch((error) => {
+      console.error(error)
+    })
+    .finally(() => {
+      this.loading = false
+    })
+    next()
+  },
+  created () {
+    this.loading = true
+    this.loadData(this.$route.params.type)
+    .then((tasks) => {
       this.tasks = {
         data: tasks
       }
@@ -108,6 +108,37 @@ export default {
         message += ` ( source: ${link.source}, target: ${link.target} )`
       }
       this.addMessage(message)
+    },
+    loadData (mode) {
+      this.mode = mode
+      return new Promise((resolve, reject) => {
+        services.ganttapi.getGantt()
+        .then((response) => {
+          const jsondata = response.data
+          let tasks = null
+          if (mode === 'msn') {
+            tasks = util.getMSNTasks(jsondata)
+          } else {
+            const manutTasks = util.getGanttTasks({data: jsondata, type: 'manut', fieldDateStart: 'Manut', duration: 1})
+            const poncageTasks = util.getGanttTasks({data: jsondata, type: 'poncage', fieldDateStart: 'Poncage', duration: 1})
+            const cabineTasks = util.getGanttTasks({data: jsondata, type: 'cabine', fieldDateStart: 'Start Cabine', fieldDateEnd: 'Fin Cabine'})
+            const paintTasks = util.getGanttPaintTasks(jsondata)
+            const moteurTasks = util.getGanttTasks({data: jsondata, type: 'moteur', fieldDateStart: 'Start Moteur', fieldDateEnd: 'Fin Moteur'})
+            const docTasks = util.getGanttTasks({data: jsondata, type: 'doc', fieldDateStart: 'Doc', duration: 1})
+
+            tasks = manutTasks
+              .concat(poncageTasks)
+              .concat(cabineTasks)
+              .concat(paintTasks)
+              .concat(moteurTasks)
+              .concat(docTasks)
+          }
+          resolve(tasks)
+        })
+        .catch((error) => {
+          reject(error)
+        })
+      })
     }
   }
 }

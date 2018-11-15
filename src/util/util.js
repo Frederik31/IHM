@@ -43,7 +43,90 @@ export function getGanttTasks (config) {
   return tasks
 }
 
+function createTask (config) {
+  var element = config.data
+  var task = {
+    'id': config.type + '-' + element.MSN,
+    'text': config.type,
+    'parent': element.MSN,
+    'msn': element.MSN
+  }
+  if (element[config.fieldDateStart] && element[config.fieldDateStart].length === 10) {
+    task['start_date'] = formatDate(element[config.fieldDateStart])
+    task['o_start_date'] = task['start_date']
+  }
+
+  if (config.duration) {
+    task['duration'] = config.duration
+  } else {
+    if (config.fieldDateEnd) {
+      if (element[config.fieldDateEnd] && element[config.fieldDateEnd].length === 10) {
+        task['end_date'] = formatDate(element[config.fieldDateEnd])
+        task['o_end_date'] = task['end_date']
+      }
+    } else {
+      task['duration'] = 1 // Default duration
+    }
+  }
+  var status = getRandomInt(0, 2)
+  switch (status) {
+    case 0:
+      task.color = 'green'
+      task.status = 'FINISHED'
+      break
+    case 1:
+      task.color = 'blue'
+      task.status = 'PENDING'
+      break
+    case 2:
+      task.color = 'yellow'
+      task.status = 'STARTED'
+      break
+  }
+  return task
+}
+
 export function getMSNTasks (jsondata) {
+  let tasks = []
+  jsondata.forEach((element) => {
+    // Parent task (By MSN)
+    var task = {
+      'id': element.MSN,
+      'text': element.MSN,
+      'msn': element.MSN
+    }
+    var status = getRandomInt(0, 2)
+    switch (status) {
+      case 0:
+        task.color = 'green'
+        task.status = 'FINISHED'
+        break
+      case 1:
+        task.color = 'blue'
+        task.status = 'PENDING'
+        break
+      case 2:
+        task.color = 'yellow'
+        task.status = 'STARTED'
+        break
+    }
+    tasks.push(task)
+    // Now create the subtasks (linked to the parent)
+    var mTask = createTask({data: element, type: 'manut', fieldDateStart: 'Manut', duration: 1})
+    tasks.push(mTask)
+    var pTask = createTask({data: element, type: 'poncage', fieldDateStart: 'Poncage', duration: 1})
+    tasks.push(pTask)
+    var cTask = createTask({data: element, type: 'cabine', fieldDateStart: 'Start Cabine', fieldDateEnd: 'Fin Cabine'})
+    tasks.push(cTask)
+    var moTask = createTask({data: element, type: 'moteur', fieldDateStart: 'Start Moteur', fieldDateEnd: 'Fin Moteur'})
+    tasks.push(moTask)
+    var dTask = createTask({data: element, type: 'doc', fieldDateStart: 'Doc', duration: 1})
+    tasks.push(dTask)
+  })
+  return tasks
+}
+
+export function getOLDMSNTasks (jsondata) {
   const tasks = jsondata.map((element) => {
     var task = {
       'id': element.MSN,

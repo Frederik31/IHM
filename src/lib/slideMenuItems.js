@@ -14,8 +14,9 @@ module.exports = [
         icon: 'fa fa-circle-o',
         name: 'Par tache',
         router: {
-          name: 'TaskPlanning'
-        }
+          name: 'MSNPlanning'
+        },
+        link: '/planning/tasks'
       },
       {
         type: 'item',
@@ -23,7 +24,8 @@ module.exports = [
         name: 'Par MSN',
         router: {
           name: 'MSNPlanning'
-        }
+        },
+        link: '/planning/msn'
       }
     ]
   },

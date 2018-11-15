@@ -92,6 +92,7 @@ export default {
       document.getElementById('my-form').style.display = ''
       this.taskId = null
     }
+    // FPL END
 
     gantt.config.drag_progress = false
     gantt.config.drag_resize = false
@@ -102,7 +103,10 @@ export default {
       { unit: 'month', step: 1, date: '%F, %Y' },
       { unit: 'year', step: 1, date: '%Y' }
     ]
-
+    // FPL : for optim
+    gantt.config.show_progress = false
+    gantt.config.show_task_cells = false
+    // FPL END
     gantt.config.row_height = 22
     gantt.config.columns = [
       { name: 'text', label: 'Task name', width: '*', tree: true },
