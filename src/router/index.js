@@ -30,17 +30,16 @@ import Dashboard from 'app/Dashboard.vue'
 import MSNPlanning from 'app/MSNPlanning.vue'
 import Prediction from 'app/Prediction.vue'
 import Prediction2 from 'app/Prediction2.vue'
-import Table from 'pages/ui-elements/Table.vue'
+import PlanningTable from 'pages/ui-elements/PlanningTable.vue'
+import MTTable from 'pages/ui-elements/MTTable.vue'
 
 Vue.use(Router)
 
 export default new Router({
   mode: 'history',
   routes: [
-    {
-      path: '/',
-      name: 'Prediction',
-      component: Prediction
+    { path: '/',
+      redirect: { name: 'Prediction' }
     },
     {
       path: '/sample',
@@ -78,9 +77,14 @@ export default new Router({
       component: MSNPlanning
     },
     {
-      path: '/ui-elements/Table',
+      path: '/ui-elements/planningTable',
       name: 'PlanningTable',
-      component: Table
+      component: PlanningTable
+    },
+    {
+      path: '/ui-elements/MTTable',
+      name: 'MTTable',
+      component: MTTable
     },
     /* {
       path: '/dashboard/v1',

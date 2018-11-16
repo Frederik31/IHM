@@ -48,8 +48,7 @@
           color="green"
           icon="ion-bag"
           title="Day tasks"
-          description="----- MSN : 281-1, Airline : LAN
-          --------- MSN : 281-2, Airline : LAN ----"
+          description="MSN : 281-1, Airline : LAN.MSN : 281-2, Airline : LAN"
           moreText="More info">
         </va-small-box>
       </div>
@@ -58,8 +57,7 @@
           color="green"
           icon="ion-stats-bars"
           title="Day tasks"
-          description="----- MSN : 281-1, Airline : LAN
-          --------- MSN : 281-2, Airline : LAN ----"
+          description="MSN : 281-1, Airline : LAN.MSN : 281-2, Airline : LAN"
           moreText="More info">
         </va-small-box>
       </div>
@@ -68,8 +66,7 @@
           color="yellow"
           icon="ion-person-add"
           title="Day tasks"
-          description="----- MSN : 237-1, Airline : QTR
-          -------- MSN : 284-2, Airline : CCA ---"
+          description="MSN : 237-1, Airline : QTR.MSN : 284-2, Airline : CCA"
           moreText="More info">
         </va-small-box>
       </div>
@@ -78,8 +75,7 @@
           color="red"
           icon="ion-pie-graph"
           title="Day tasks"
-          description="---- MSN : 289-1, Airline : ETH
-          ----"
+          description="MSN : 289-1, Airline : ETH"
           moreText="More info">
         </va-small-box>
       </div>

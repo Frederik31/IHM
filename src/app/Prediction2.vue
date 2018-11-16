@@ -23,7 +23,7 @@
       </div>
       <div class="col-md-3 col-sm-6 col-xs-12">
         <va-info-box
-            bgColor="bg-green"
+            bgColor="bg-yellow"
             bgIcon="fa fa-files-o"
             text="Peinture"
             number="15"
@@ -33,7 +33,7 @@
       </div>
       <div class="col-md-3 col-sm-6 col-xs-12">
         <va-info-box
-            bgColor="bg-green"
+            bgColor="bg-red"
             bgIcon="fa fa-star-o"
             text="Moteur"
             number="93139"
@@ -48,8 +48,14 @@
           color="red"
           icon="ion-bag"
           title="Week tasks"
-          description="----- MSN : 281-1, Airline : CSC ---
-          ----- MSN : 281-2, Airline : CSC -------- MSN : 279-1, Airline : HVN -------- MSN : 279-2, Airline : HVN -------- MSN : 285-1, Airline : CHH -------- MSN : 285-1, Airline : CHH -------- MSN : 286-1, Airline : CPA --------- MSN : 286-2, Airline : CPA ----"
+          description="MSN : 281-1, Airline : CSC.
+          MSN : 281-2, Airline : CSC.
+          MSN : 279-1, Airline : HVN.
+          MSN : 279-2, Airline : HVN.
+          MSN : 285-1, Airline : CHH.
+          MSN : 285-1, Airline : CHH.
+          MSN : 286-1, Airline : CPA.
+          MSN : 286-2, Airline : CPA"
           moreText="More info">
         </va-small-box>
       </div>
@@ -58,28 +64,46 @@
           color="yellow"
           icon="ion-stats-bars"
           title="Week tasks"
-          description="----- MSN : 281-1, Airline : CSC ---
-          ----- MSN : 281-2, Airline : CSC -------- MSN : 279-1, Airline : HVN -------- MSN : 279-2, Airline : HVN -------- MSN : 285-1, Airline : CHH -------- MSN : 285-1, Airline : CHH -------- MSN : 286-1, Airline : CPA --------- MSN : 286-2, Airline : CPA ----"
+          description="MSN : 281-1, Airline : CSC.
+          MSN : 281-2, Airline : CSC.M
+          SN : 279-1, Airline : HVN.
+          MSN : 279-2, Airline : HVN.
+          MSN : 285-1, Airline : CHH.
+          MSN : 285-1, Airline : CHH.
+          MSN : 286-1, Airline : CPA.
+          MSN : 286-2, Airline : CPA"
           moreText="More info">
         </va-small-box>
       </div>
       <div class="col-md-3 col-sm-6 col-xs-12">
         <va-small-box
-          color="green"
+          color="yellow"
           icon="ion-person-add"
           title="Week tasks"
-          description="----- MSN : 281-1, Airline : CSC ---
-          ----- MSN : 281-2, Airline : CSC -------- MSN : 279-1, Airline : HVN -------- MSN : 279-2, Airline : HVN -------- MSN : 285-1, Airline : CHH -------- MSN : 285-1, Airline : CHH -------- MSN : 286-1, Airline : CPA --------- MSN : 286-2, Airline : CPA ----"
+          description="MSN : 281-1, Airline : CSC.
+          MSN : 281-2, Airline : CSC.M
+          SN : 279-1, Airline : HVN.
+          MSN : 279-2, Airline : HVN.
+          MSN : 285-1, Airline : CHH.
+          MSN : 285-1, Airline : CHH.
+          MSN : 286-1, Airline : CPA.
+          MSN : 286-2, Airline : CPA"
           moreText="More info">
         </va-small-box>
       </div>
       <div class="col-md-3 col-sm-6 col-xs-12">
         <va-small-box
-          color="green"
+          color="red"
           icon="ion-pie-graph"
           title="Week tasks"
-          description="----- MSN : 281-1, Airline : CSC ---
-          ----- MSN : 281-2, Airline : CSC -------- MSN : 279-1, Airline : HVN -------- MSN : 279-2, Airline : HVN -------- MSN : 285-1, Airline : CHH -------- MSN : 285-1, Airline : CHH -------- MSN : 286-1, Airline : CPA --------- MSN : 286-2, Airline : CPA ----"
+          description="MSN : 281-1, Airline : CSC.
+          MSN : 281-2, Airline : CSC.
+          MSN : 279-1, Airline : HVN.
+          MSN : 279-2, Airline : HVN.
+          MSN : 285-1, Airline : CHH.
+          MSN : 285-1, Airline : CHH.
+          MSN : 286-1, Airline : CPA.
+          MSN : 286-2, Airline : CPA"
           moreText="More info">
         </va-small-box>
       </div>
@@ -95,7 +119,7 @@
             numberType="comma"
             :isProgress="true"
             :percentage="0"
-            progressDescription="Strike"
+            progressDescription="Strike 20/11/2018"
           ></va-info-box>
       </div>
 
@@ -113,26 +137,26 @@
       </div>
       <div class="col-md-3 col-sm-6 col-xs-12">
         <va-info-box
-            wrapBgColor="bg-green"
+            wrapBgColor="bg-yellow"
             bgIcon="fa fa-calendar"
             text="Alerts"
             number="41410"
             numberType="comma"
             :isProgress="true"
             :percentage="100"
-            progressDescription="No alert"
+            progressDescription="Repaint of 284-2"
           ></va-info-box>
       </div>
       <div class="col-md-3 col-sm-6 col-xs-12">
         <va-info-box
-            wrapBgColor="bg-green"
+            wrapBgColor="bg-red"
             bgIcon="fa fa-comments-o"
             text="Alerts"
             number="41410"
             numberType="comma"
             :isProgress="true"
             :percentage="100"
-            progressDescription="No alert"
+            progressDescription="Engine missing part"
           ></va-info-box>
       </div>
 

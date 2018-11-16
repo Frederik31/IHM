@@ -4,7 +4,13 @@
     <div class="inner">
       <h3>{{title}}</h3>
 
-      <p>{{description}}</p>
+
+    <ul id="example-1">
+      <li v-for="item in valueArray">
+        {{ item }}
+      </li>
+    </ul>
+
     </div>
     <div class="icon">
       <i class="ion" :class="icon"></i>
@@ -22,10 +28,19 @@ export default {
       return `bg-${this.color}`
     }
   },
+  data () {
+    return {
+      valueArray: []
+    }
+  },
   methods: {
     moreEvent () {
       this.$emit('more-click')
     }
+  },
+  created () {
+    this.valueArray = this.description.split('.')
+    console.log(this.valueArray)
   }
 }
 </script>

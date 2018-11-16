@@ -98,7 +98,7 @@ export function getMSNTasks (jsondata) {
     var status = getRandomInt(0, 2)
     switch (status) {
       case 0:
-        task.color = 'green'
+        task.color = '#00a65a'
         task.status = 'FINISHED'
         break
       case 1:
@@ -106,7 +106,7 @@ export function getMSNTasks (jsondata) {
         task.status = 'PENDING'
         break
       case 2:
-        task.color = 'yellow'
+        task.color = '#f39c12'
         task.status = 'STARTED'
         break
     }

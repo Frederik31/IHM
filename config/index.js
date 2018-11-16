@@ -47,8 +47,16 @@ module.exports = {
       '/paints': {
         target: 'http://localhost:3001',
         changeOrigin: true
-      }
+      },
       '/logout': {
+        target: 'http://localhost:3001',
+        changeOrigin: true
+      },
+      '/planningTable': {
+        target: 'http://localhost:3001',
+        changeOrigin: true
+      },
+      '/mttable': {
         target: 'http://localhost:3001',
         changeOrigin: true
       }

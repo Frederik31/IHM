@@ -64,12 +64,27 @@ module.exports = [
     name: 'ADMINISTRATION'
   },
   {
-    type: 'item',
+    type: 'tree',
     icon: 'fa fa-table',
-    name: 'Planning table',
-    router: {
-      name: 'PlanningTable'
-    }
+    name: 'Table Management',
+    items: [
+      {
+        type: 'item',
+        icon: 'fa fa-table',
+        name: 'Planning table',
+        router: {
+          name: 'PlanningTable'
+        }
+      },
+      {
+        type: 'item',
+        icon: 'fa fa-table',
+        name: 'MT Table',
+        router: {
+          name: 'MTTable'
+        }
+      }
+    ]
   },
   {
     type: 'item',
